@@ -3,6 +3,8 @@ procxx
 
 A simple process management library for C++ on UNIX platforms.
 
+[![CircleCI](https://circleci.com/gh/ukaiser/procxx.svg?style=svg)](https://circleci.com/gh/ukaiser/procxx)
+
 ## Usage
 Here is a simple (toy) example of setting up a very basic pipeline.
 
