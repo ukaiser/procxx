@@ -5,7 +5,7 @@ jobs:
       - image: rikorose/gcc-cmake:gcc-7
     steps:
       - checkout
-      - run: cmake -H. -Bbuild
+      - run: cmake -H. -Bbuild -DBUILD_EXAMPLE=ON
       - run: cmake --build build
       - run: ./build/example/example
   build_gcc_8:
@@ -13,7 +13,7 @@ jobs:
       - image: rikorose/gcc-cmake:gcc-8
     steps:
       - checkout
-      - run: cmake -H. -Bbuild
+      - run: cmake -H. -Bbuild -DBUILD_EXAMPLE=ON
       - run: cmake --build build
       - run: ./build/example/example
 
