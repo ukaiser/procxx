@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build_gcc_7:
     docker:
-      - image: gcc:7
+      - image: rikorose/gcc-cmake:gcc-7
     steps:
       - checkout
       - run: mkdir -p build && cd build
@@ -11,7 +11,7 @@ jobs:
       - run: ./example/example
   build_gcc_latest:
     docker:
-      - image: gcc:8
+      - image: rikorose/gcc-cmake:gcc-8
     steps:
       - checkout
       - run: mkdir -p build && cd build
