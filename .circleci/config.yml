@@ -5,19 +5,17 @@ jobs:
       - image: rikorose/gcc-cmake:gcc-7
     steps:
       - checkout
-      - run: mkdir -p build && cd build
-      - run: cmake .. -DBUILD_EXAMPLE=ON
-      - run: make
-      - run: ./example/example
-  build_gcc_latest:
+      - run: cmake -H. -Bbuild
+      - run: cmake --build build
+      - run: ./build/example/example
+  build_gcc_8:
     docker:
       - image: rikorose/gcc-cmake:gcc-8
     steps:
       - checkout
-      - run: mkdir -p build && cd build
-      - run: cmake .. -DBUILD_EXAMPLE=ON
-      - run: make
-      - run: ./example/example
+      - run: cmake -H. -Bbuild
+      - run: cmake --build build
+      - run: ./build/example/example
 
 workflows:
   version: 2
