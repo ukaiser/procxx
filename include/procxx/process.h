@@ -268,7 +268,7 @@ class pipe_ostreambuf : public std::streambuf
         setg(end, end, end);
     }
 
-    ~pipe_ostreambuf() = default;
+    ~pipe_ostreambuf() override = default;
 
     int_type underflow() override
     {
@@ -361,7 +361,7 @@ class pipe_streambuf : public pipe_ostreambuf
      * Destroys the streambuf, which will flush any remaining content on
      * the output buffer.
      */
-    ~pipe_streambuf()
+    ~pipe_streambuf() override
     {
         flush();
     }
